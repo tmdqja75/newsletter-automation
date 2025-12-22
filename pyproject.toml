@@ -1,0 +1,12 @@
+[project]
+name = "newsletter-automation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.2"
+dependencies = [
+    "deepagents>=0.3.0",
+    "langchain-mcp-adapters>=0.2.1",
+    "python-dotenv>=1.2.1",
+    "tavily-python>=0.7.17",
+]
