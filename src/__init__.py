@@ -1,7 +1,10 @@
-from .research_agent import init_research_agent
+from .research_agent import ResearchAgent
+from .prompt import DEFAULT_RESEARCH_INSTRUCTIONS
 
 __all__ = [
-    "init_research_agent"
+    "ResearchAgent",
+    "init_research_agent",
+    "DEFAULT_RESEARCH_INSTRUCTIONS"
 ]
 
 __version__ = "0.1.0"

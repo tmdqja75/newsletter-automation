@@ -5,9 +5,7 @@ from src.research_agent import ResearchAgent
 
 async def main():
     topics = [
-        "AI developments in 2025",
-        "Climate change solutions",
-        "Space exploration news"
+        "Research about langchain's new python package 'deepagents', introduce what it is, how it is different from langchain and langgraph,  and use cases."
     ]
 
     # Create separate agent for each topic
