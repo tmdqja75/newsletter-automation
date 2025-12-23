@@ -1,10 +1,14 @@
 import os
 from typing import Literal, Optional
-from tavily import AsyncTavilyClient
+
 from deepagents import create_deep_agent
+from deepagents.backends import FilesystemBackend
+from deepagents.middleware.filesystem import FilesystemMiddleware
 from dotenv import load_dotenv
-from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain_core.tools import StructuredTool
+from langchain_mcp_adapters.client import MultiServerMCPClient
+from tavily import AsyncTavilyClient
+
 from .prompt import DEFAULT_RESEARCH_INSTRUCTIONS
 
 load_dotenv()
@@ -60,9 +64,14 @@ class ResearchAgent:
             name="internet_search",
             description="Run a web search to find information on the internet. Use this to find current information, news, and research topics."
         )
+        
+        # file_backend = FilesystemBackend(
+        #     root_dir=".", virtual_mode=True
+        # )
 
         self.agent = create_deep_agent(
             tools=[internet_search_tool] + list(tools),
+            backend=FilesystemBackend(root_dir=os.environ["ROOT_PATH"], virtual_mode=True),
             system_prompt=self.system_prompt
         )
         return self.agent

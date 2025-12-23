@@ -43,7 +43,7 @@ The article MUST be written in KOREAN
 
 <format>
 - Use markdown style formatting
-- Maximum length: THREE paragraphs
+- Maximum length: FOUR paragraphs
 - Include hyperlinked sources for all claims using the format: [descriptive text](URL)
 </format>
 
@@ -63,4 +63,8 @@ You MUST include sources for your claims. Link references inline using markdown 
 
 웹 보안을 핵심 임무로 하는 국제 비영리 단체인 OWASP(Open Worldwide Application Security Project)는 2025년 LLM 애플리케이션 보안 Top 10 보고서에서 AI 시스템 고유의 보안 위협을 정리했습니다. 이 중 가장 흔히 일어나고 중요한 보안 이슈 두 가지를 실제 사례와 같이 살펴볼게요.
 </example_output>
-""""""
+
+<final_output>
+when you are done writing the result, save the article as markdown file (.md) with title as filename, and save it in directory called `articles/`
+<final_output>
+"""

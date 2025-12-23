@@ -1,5 +1,5 @@
-from .research_agent import ResearchAgent
 from .prompt import DEFAULT_RESEARCH_INSTRUCTIONS
+from .research_agent import ResearchAgent
 
 __all__ = [
     "ResearchAgent",

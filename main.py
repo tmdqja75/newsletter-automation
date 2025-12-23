@@ -1,7 +1,9 @@
 # Parallel Research (Multiple Topics)
 
 import asyncio
+
 from src.research_agent import ResearchAgent
+
 
 async def main():
     topics = [
