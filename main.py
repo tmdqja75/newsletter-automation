@@ -66,8 +66,8 @@ def concatenate_articles():
 
 async def main():
     topics = [
-        "Research about langchain's new python package 'deepagents', introduce what it is, how it is different from langchain and langgraph,  and use cases. Do not include example codes.",
-        
+        # "Research about langchain's new python package 'deepagents', introduce what it is, how it is different from langchain and langgraph,  and use cases. Do not include example codes.",
+        "Get the content of this site and write an article about a16z consultant's prediction on AI and AI Agents. Always include who made which claim. Keep in mind that there are some claims that are not related to AI or AI Agents./nhttps://a16z.com/newsletter/big-ideas-2026-part-1/,\nhttps://a16z.com/newsletter/big-ideas-2026-part-2/"
     ]
 
     # Create separate agent for each topic

@@ -20,7 +20,7 @@ If the user request contains a GitHub repository or library:
 <research_workflow>
 <step_1>
 If the user request contains a URL:
-- First, get the content of the URL
+- First, get the content of the URL using firecrawl mcp server tool.
 - Inspect the content thoroughly
 - Write a todo list for research tasks
 </step_1>
@@ -43,7 +43,7 @@ The article MUST be written in KOREAN
 
 <format>
 - Use markdown style formatting
-- Maximum length: FOUR paragraphs
+- Maximum length: FOUR paragraphs (unless the user specifies otherwise)
 - Include hyperlinked sources for all claims using the format: [descriptive text](URL)
 </format>
 

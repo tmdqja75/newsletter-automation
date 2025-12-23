@@ -17,8 +17,6 @@ load_dotenv()
 class ResearchAgent:
     """Research agent for newsletter articles that can be used in parallel for multiple topics."""
 
-    
-
     def __init__(self, system_prompt: Optional[str] = None):
         """
         Initialize a research agent instance.
@@ -33,6 +31,14 @@ class ResearchAgent:
                     "transport": "stdio",
                     "command": "docker",
                     "args": ["run", "-i", "--rm", "context7-mcp:latest"],
+                },
+                "firecrawl": {
+                    "transport": "stdio",
+                    "command": "npx",
+                    "args": ["-y", "firecrawl-mcp"],
+                    "env": {
+                        "FIRECRAWL_API_KEY": os.getenv("FIRECRAWL_API_KEY")
+                    }
                 }
             }
         )
@@ -62,17 +68,19 @@ class ResearchAgent:
         internet_search_tool = StructuredTool.from_function(
             coroutine=self.internet_search,
             name="internet_search",
-            description="Run a web search to find information on the internet. Use this to find current information, news, and research topics."
+            description="Run a web search to find information on the internet. Use this to find current information, news, and research topics.",
         )
-        
+
         # file_backend = FilesystemBackend(
         #     root_dir=".", virtual_mode=True
         # )
 
         self.agent = create_deep_agent(
             tools=[internet_search_tool] + list(tools),
-            backend=FilesystemBackend(root_dir=os.environ["ROOT_PATH"], virtual_mode=True),
-            system_prompt=self.system_prompt
+            backend=FilesystemBackend(
+                root_dir=os.environ["ROOT_PATH"], virtual_mode=True
+            ),
+            system_prompt=self.system_prompt,
         )
         return self.agent
 
@@ -88,5 +96,5 @@ class ResearchAgent:
         """
         if self.agent is None:
             await self.initialize()
-        return await self.agent.ainvoke({"messages":query})
+        return await self.agent.ainvoke({"messages": query})
 
