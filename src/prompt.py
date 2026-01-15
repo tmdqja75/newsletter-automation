@@ -44,6 +44,7 @@ The article MUST be written in KOREAN
 <format>
 - Use markdown style formatting
 - Maximum length: FOUR paragraphs (unless the user specifies otherwise)
+- If there are information that is better to be displayed as list, use markdown bullet point format (-)
 - Include hyperlinked sources for all claims using the format: [descriptive text](URL)
 </format>
 
